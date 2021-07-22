@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:contra_care/services/admin_faqs_update.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class UserQuery extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _UserQueryState extends State<UserQuery> {
       body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance.collection('query').snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            if (!snapshot.hasData) return Text('loading UserQuery');
+            if (!snapshot.hasData) return Center(child: CircularProgressIndicator());
             return ListView.builder(
                 itemCount: snapshot.data.size,
                 itemBuilder: (context, index) {
@@ -40,7 +41,7 @@ class _UserQueryState extends State<UserQuery> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Card(
                             color: Colors.indigoAccent[100],
                             shape: RoundedRectangleBorder(
@@ -68,9 +69,9 @@ class _UserQueryState extends State<UserQuery> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 8,
-                                ),
+                                // SizedBox(
+                                //   height: 8,
+                                // ),
                                 Container(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
@@ -82,7 +83,7 @@ class _UserQueryState extends State<UserQuery> {
                                   ),
                                 ),
                                 Text(
-                                  snapshot.data.docs[index]['desc'],
+                                  '${snapshot.data.docs[index]['desc']}',
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.white),
                                 )

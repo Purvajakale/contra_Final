@@ -215,7 +215,7 @@ class _AdminPanelState extends State<AdminPanel> {
                                     ),
                                     padding: const EdgeInsets.all(12.0),
                                     child: Icon(
-                                      Icons.add,
+                                      Icons.info,
                                       size: 40,
                                       color: Colors.white,
                                     ),
@@ -348,7 +348,7 @@ class _AdminPanelState extends State<AdminPanel> {
                                   ),
                                   padding: const EdgeInsets.all(12.0),
                                   child: Icon(
-                                    Icons.info,
+                                    Icons.add,
                                     size: 40,
                                     color: Colors.white,
                                   ),

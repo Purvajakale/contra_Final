@@ -96,6 +96,7 @@ class RecomendsPlants extends StatelessWidget {
               },
             ),
           ),
+          SizedBox(width: 30,),
         ],
       ),
     );

@@ -11,7 +11,7 @@ class FormFour extends StatefulWidget {
 
 class _FormFourState extends State<FormFour> with Validator {
 
-  final snackBar = SnackBar();
+  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
 
   String id;

@@ -6,6 +6,7 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color: Color(0xffFFFDF9),
       child: DefaultTextStyle.merge(
         style: const TextStyle(
           fontSize: 16.0,
@@ -15,7 +16,6 @@ class DemoApp extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Card(
-              color: Color(0xffFFFDF9),
               shape: RoundedRectangleBorder(side: BorderSide(color: Colors.pinkAccent, width: 1),
                   borderRadius: BorderRadius.circular(20)),
               child: Column(

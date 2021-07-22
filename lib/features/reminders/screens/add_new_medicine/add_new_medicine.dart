@@ -226,7 +226,7 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                 width: double.infinity,
                 child: PlatformFlatButton(
                   handler: () async => savePill(),
-                  color: Theme.of(context).primaryColor,
+                  color: Color(0xffF38BA0),
                   buttonChild: Text(
                     "Done",
                     style: TextStyle(

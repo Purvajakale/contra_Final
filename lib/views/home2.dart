@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
       key: scaffoldKey,
       appBar: AppBar(
         brightness: Brightness.light,
-        iconTheme: IconThemeData(color: Color(0xffF38BA0).withOpacity(0.6)),
+        iconTheme: IconThemeData(color: Color(0xffF33D60).withOpacity(0.6)),
         backgroundColor: Color(0xffFFE3ED),
         elevation: 0,
       ),
@@ -284,15 +284,20 @@ class _HomePageState extends State<HomePage> {
                 SingleChildScrollView(
                   child: Column(
                     children: [
-                      Container(color: Color(0xffFFFDF9),
+                      Container(
+                        color: Color(0xffFFFDF9),
                         child: RecomendsPlants(),
                       ),
-                      SizedBox(
-                        height: 0,
+
+                      Container(
+                        color: Color(0xffFFFDF9),
+                        child: Padding(
+                            padding: EdgeInsets.all(12),
+                            child: DemoApp()),
                       ),
-                      Padding(
-                          padding: EdgeInsets.all(12),
-                          child: DemoApp()),
+                      SizedBox(
+                        height: 20,
+                      ),
                     ],
                   ),
                 ),
