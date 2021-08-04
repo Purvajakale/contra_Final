@@ -16,7 +16,7 @@ class UserSlider extends StatelessWidget {
               min: 1,
               max: 28,
               value: howManyWeeks,
-              color: Color(0xffF38BA0),
+              color: Color(0xffF5637F),
               handler:  this.handler,)),
       ],
     );

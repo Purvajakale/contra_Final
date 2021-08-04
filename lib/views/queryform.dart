@@ -162,7 +162,8 @@ class _FormFourState extends State<FormFour> with Validator {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           gradient:
-          LinearGradient(colors: [Color(0xffFFBCBC), Color(0xffF38BA0)])),
+          LinearGradient(colors: [Color(0xfffbccd5), Color(0xffF5637F)]),
+      ),
       child: RaisedButton(
         onPressed: createData,
         padding: EdgeInsets.symmetric(vertical: minValue * 2.4),

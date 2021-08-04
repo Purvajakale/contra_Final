@@ -70,7 +70,7 @@ class OnBoardPageState extends State<OnBoardPage> with TickerProviderStateMixin 
           builder: (context) => LoginChoice(),
         ),
       ),
-      footerBgColor: TinyColor(Color(0xff1CC5DC)).lighten().color,
+      footerBgColor: TinyColor(Color(0xffF5637F)).color,
       activeDotColor: Colors.white,
       footerRadius: 18.0,
 //      indicatorType: IndicatorType.CIRCLE,
@@ -123,7 +123,7 @@ class OnBoardPageState extends State<OnBoardPage> with TickerProviderStateMixin 
   openLoginPage() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LoginChoice()));
-    alertbox();
+    // alertbox();
   }
 }
 

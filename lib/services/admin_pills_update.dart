@@ -31,12 +31,12 @@ class _PillInfoUpdateState extends State<PillInfoUpdate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pills Update',),backgroundColor: Color(0xff7c83fd),
+        title: const Text('Pills Update',),backgroundColor: Color(0xffF5637F),
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,
         animationDuration: Duration(milliseconds: 1000),
-        color: Color(0xff7c83fd),
+        color: Color(0xffF5637F),
         animationCurve: Curves.easeInOutQuad,
         height: 70,
         buttonBackgroundColor: Colors.blueGrey.shade100,
@@ -52,35 +52,3 @@ class _PillInfoUpdateState extends State<PillInfoUpdate> {
     );
   }
 }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Pills data'),
-//       ),
-//       body: Center(
-//         child: _widgetOptions.elementAt(_selectedIndex),
-//       ),
-//       bottomNavigationBar: BottomNavigationBar(
-//         items: const <BottomNavigationBarItem>[
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.home),
-//             label: 'i-pill',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.business),
-//             label: 'e-pill',
-//           ),
-//           // BottomNavigationBarItem(
-//           //   icon: Icon(Icons.school),
-//           //   label: 'School',
-//           // ),
-//         ],
-//         currentIndex: _selectedIndex,
-//         selectedItemColor: Colors.amber[800],
-//         onTap: _onItemTapped,
-//       ),
-//     );
-//   }
-// }

@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
         color: Colors.white,
         size: 24.0,
       ),
-      backgroundColor: Color(0xffF38BA0),
+      backgroundColor: Color(0xffFF5637F),
     );
 
     return Scaffold(
@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                           child: Icon(
                             Icons.notifications_none,
                             size: 42.0,
-                            color: Color(0xffF38BA0),
+                            color: Color(0xffF5637F),
                           ),
                         )
                       ],

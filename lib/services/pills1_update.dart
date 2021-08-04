@@ -79,7 +79,7 @@ class _pills1State extends State<pills1> {
                   onPressed: () => updateData(doc),
                   child: Text('Update ',
                       style: TextStyle(color: Colors.white)),
-                  color: Color(0xff7c83fd),
+                  color: Color(0xffF5637F),
                 ),
                 SizedBox(width: 8),
                 Container(
@@ -141,7 +141,7 @@ class _pills1State extends State<pills1> {
                     borderRadius: BorderRadius.circular(20.0)),
                   onPressed: createData,
                   child: Text('Create', style: TextStyle(color: Colors.white)),
-                  color: Color(0xff7c83fd),
+                  color: Color(0xffF5637F),
                 ),
               ],
             ),

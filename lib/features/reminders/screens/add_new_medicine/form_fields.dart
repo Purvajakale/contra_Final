@@ -109,7 +109,7 @@ class FormFields extends StatelessWidget {
                 child: Text(
                   "How long?",
                   style: TextStyle(
-                      color: Color(0xffF38BA0),
+                      color: Color(0xffF5637F),
                       fontSize: 18.0,
                       fontWeight: FontWeight.w600),
                 ),

@@ -86,23 +86,22 @@ class _HomePageState extends State<HomePage> {
       key: scaffoldKey,
       appBar: AppBar(
         brightness: Brightness.light,
-        iconTheme: IconThemeData(color: Color(0xffF33D60).withOpacity(0.6)),
-        backgroundColor: Color(0xffFFE3ED),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color(0xffF5637F),
         elevation: 0,
       ),
       drawer: Padding(
-        padding: EdgeInsets.only(top: 26, bottom: 5),
+        padding: EdgeInsets.only(top: 16, bottom: 5),
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(40),
                 topRight: Radius.circular(40),
               ),
-              color: Color(0xffFFE3ED)),
-          //color: Colors.white,
-          // color: Color(0xff96BAFF),
+              color: Color(0xfff78298 )),
+          
           width: MediaQuery.of(context).size.width * 0.75,
-          height: MediaQuery.of(context).size.height * 0.90,
+          height: MediaQuery.of(context).size.height * 0.875,
           // height: 800,
           child: ListView(
             children: [
@@ -111,15 +110,15 @@ class _HomePageState extends State<HomePage> {
                 child: DrawerHeader(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
-                      Color(0xffFFE3ED),
-                      Colors.grey[100],
+                      Color(0xfff78298 ),
+                      Color(0xfffbccd5),
                     ]),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Row(
                     children: [
                       Image.asset(
-                        'assets/images/profile.jpg',
+                        'assets/images/profile.png',
                         height: 100,
                         width: 80,
                       ),
@@ -255,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                   height: MediaQuery.of(context).size.height * 0.20,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Color(0xffFFE3ED),
+                    color: Color(0xffF5637F),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(45),
                         bottomRight: Radius.circular(45)),
@@ -270,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                           "Welcome to, \nContraCare!",
                           style: GoogleFonts.quicksand(
                                 fontSize: 32,fontWeight: FontWeight.w500,
-                                color: Colors.grey[800],
+                                color: Colors.grey[100],
                               ),
                         ),
                         Container(

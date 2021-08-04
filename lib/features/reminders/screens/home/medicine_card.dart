@@ -65,7 +65,7 @@ class MedicineCard extends StatelessWidget {
                 FloatingActionButton(
                   onPressed:() { _showDeleteDialog(context, medicine.name, medicine.id, medicine.notifyId); },
                   child: Icon(Icons.delete_outline,size: 25,),
-                  backgroundColor: Color(0xffF38BA0),
+                  backgroundColor: Color(0xffF5637F),
                   
                 )
               ],

@@ -102,7 +102,7 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                   style: Theme.of(context)
                       .textTheme
                       .headline3
-                      .copyWith(color: Color(0xffF38BA0)),
+                      .copyWith(color: Color(0xffF5637F)),
                 )),
               ),
               SizedBox(
@@ -171,14 +171,14 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                                 DateFormat.Hm().format(this.setDate),
                                 style: TextStyle(
                                     fontSize: 25.0,
-                                    color: Color(0xffF38BA0),
+                                    color: Color(0xffF5637F),
                                     fontWeight: FontWeight.w500),
                               ),
                               SizedBox(width: 8),
                               Icon(
                                 Icons.access_time,
                                 size: 25,
-                                color: Color(0xffF38BA0),
+                                color: Color(0xffF5637F),
                               )
                             ],
                           ),
@@ -202,14 +202,14 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                                 DateFormat("dd.MM").format(this.setDate),
                                 style: TextStyle(
                                     fontSize: 25,
-                                    color: Color(0xffF38BA0),
+                                    color: Color(0xffF5637F),
                                     fontWeight: FontWeight.w500),
                               ),
                               SizedBox(width: 10),
                               Icon(
                                 Icons.event,
                                 size: 25,
-                                color: Color(0xffF38BA0),
+                                color: Color(0xffF5637F),
                               )
                             ],
                           ),
@@ -226,7 +226,7 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                 width: double.infinity,
                 child: PlatformFlatButton(
                   handler: () async => savePill(),
-                  color: Color(0xffF38BA0),
+                  color: Color(0xffF5637F),
                   buttonChild: Text(
                     "Done",
                     style: TextStyle(

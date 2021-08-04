@@ -21,6 +21,7 @@ class _Table2State extends State<Table2> {
                 "Multiple brands of oral contraceptive pill are available in India. Some of the commonly available brands "
                     "of Ethinyl Estradiol and Levonorgestrel "
                     "combination and Ethinyl Estradiol and Desogestrel combination are as follows \n\n I-Pill",
+                textAlign: TextAlign.justify,
                 style: GoogleFonts.alikeAngular(
                   // fontStyle: FontStyle.italic,
                     fontSize: 16,

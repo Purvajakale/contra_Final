@@ -188,7 +188,7 @@ class _LoginChoiceState extends State<LoginChoice> {
 
   openLoginPage() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
-    alertbox();
+    // alertbox();
   }
 
   Future alertbox() async {

@@ -59,16 +59,18 @@ class _faqs1State extends State<faqs1> {
     ),
     ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(18.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               'question: ${doc['ques']}',
+              textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 15),
             ),SizedBox(height: 5),
             Text(
               'answer: ${doc['ans']}',
+              textAlign: TextAlign.justify,
               style: TextStyle(fontSize: 15),
             ),
             SizedBox(height: 12),
@@ -80,7 +82,7 @@ class _faqs1State extends State<faqs1> {
                       borderRadius: BorderRadius.circular(20.0)),
                   onPressed: () => updateData(doc),
                   child: Text('Update ', style: TextStyle(color: Colors.white)),
-                  color: Color(0xff7c83fd),
+                  color: Color(0xffF5637F),
                 ),
                 SizedBox(width: 8),
                 Container(
@@ -175,7 +177,7 @@ class _faqs1State extends State<faqs1> {
                   padding: const EdgeInsets.all(12.0),
                   child: Text('Create', style: TextStyle(color: Colors.white)),
                 ),
-                color: Color(0xff7c83fd),
+                color: Color(0xffF5637F),
               ),
               // RaisedButton(
               //   onPressed: id != null ? readData : null,

@@ -40,6 +40,7 @@ class DemoApp extends StatelessWidget {
                       trimMode: TrimMode.Line,
                       trimCollapsedText: 'Show more',
                       trimExpandedText: ' show less',
+                      textAlign: TextAlign.justify,
                     ),
                   )
                 ],
@@ -72,6 +73,7 @@ class DemoApp extends StatelessWidget {
                       trimMode: TrimMode.Line,
                       trimCollapsedText: 'Show more',
                       trimExpandedText: ' show less',
+                      textAlign: TextAlign.justify,
                     ),
                   )
                 ],
@@ -104,6 +106,7 @@ class DemoApp extends StatelessWidget {
                       trimMode: TrimMode.Line,
                       trimCollapsedText: 'Show more',
                       trimExpandedText: ' show less',
+                      textAlign: TextAlign.justify,
                     ),
                   )
                 ],
@@ -140,6 +143,7 @@ class DemoApp extends StatelessWidget {
                       trimMode: TrimMode.Line,
                       trimCollapsedText: 'Show more',
                       trimExpandedText: ' show less',
+                      textAlign: TextAlign.justify,
                     ),
                   )
                 ],

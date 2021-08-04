@@ -11,7 +11,6 @@ class FaqPage1 extends StatefulWidget {
 }
 
 class _FaqPage1State extends State<FaqPage1> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +18,9 @@ class _FaqPage1State extends State<FaqPage1> {
         children: [
           Container(
             child: Padding(
-              padding: EdgeInsets.fromLTRB(30, 10, 20, 5),
-              child: Text("Daily use Contraceptive Pills",
+              padding: EdgeInsets.fromLTRB(30, 10, 20, 10),
+              child: Text(
+                "Daily use Contraceptive Pills",
                 style: GoogleFonts.alikeAngular(
                   // fontStyle: FontStyle.italic,
                     fontSize: 20,
@@ -29,7 +29,7 @@ class _FaqPage1State extends State<FaqPage1> {
               ),
             ),
           ),
-          SizedBox(height: 12),
+          SizedBox(height: 18),
           Expanded(
             child: faqs1(),
           ),
@@ -47,7 +47,6 @@ class faqs1 extends StatefulWidget {
 }
 
 class _faqs1State extends State<faqs1> {
-
   UniqueKey keyTile;
   bool isExpanded = false;
 
@@ -65,7 +64,6 @@ class _faqs1State extends State<faqs1> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -80,30 +78,46 @@ class _faqs1State extends State<faqs1> {
                     itemCount: snapshot.data.size,
                     itemBuilder: (context, index) {
                       return Container(
-                        child: Padding(padding: EdgeInsets.only(left:10,right: 10),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10, right: 10),
                           child: Card(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-                            shadowColor: Colors.indigoAccent,
-                            elevation: 4,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
+                              side: BorderSide(
+                                color: Colors.pinkAccent,
+                                width: 1.0,
+                              ),
+                            ),
+                            shadowColor: Color(0xffFFE3ED),
+                            elevation: 0,
                             child: ExpansionTile(
                               key: keyTile,
                               backgroundColor: Colors.transparent,
                               initiallyExpanded: isExpanded,
-                              childrenPadding: EdgeInsets.all(18).copyWith(top: 0),
-                              title: Text(
-                                snapshot.data.docs[index]['ques'],
-                                style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold),
+                              childrenPadding:
+                              EdgeInsets.all(22).copyWith(top: 0),
+                              title: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  snapshot.data.docs[index]['ques'],
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                               ),
                               children: [
                                 Text(
                                   snapshot.data.docs[index]['ans'],
+                                  textAlign: TextAlign.justify,
                                   style: TextStyle(fontSize: 15),
                                 ),
                               ],
                             ),
                           ),
-                        ),padding: EdgeInsets.only(bottom: 5),
+                        ),
+                        padding: EdgeInsets.only(bottom: 12),
                       );
                     }),
               );
@@ -112,3 +126,7 @@ class _faqs1State extends State<faqs1> {
     );
   }
 }
+
+
+
+

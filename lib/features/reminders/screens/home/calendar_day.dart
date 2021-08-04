@@ -21,7 +21,7 @@ class _CalendarDayState extends State<CalendarDay> {
           Text(
             widget.day.dayLetter,
             style: TextStyle(
-                color: Color(0xffF38BA0),
+                color: Color(0xffF5637F),
                 fontSize: 15,//chnge
                 fontWeight: FontWeight.w400),
           ),
@@ -33,7 +33,7 @@ class _CalendarDayState extends State<CalendarDay> {
             child: CircleAvatar(
               radius: constrains.maxHeight * 0.18,//chgnge
               backgroundColor: widget.day.isChecked
-                  ? Color(0xffF38BA0)
+                  ? Color(0xffF5637F)
                   : Color(0xff7c83fd),
               child: Padding(
                 padding: const EdgeInsets.all(2.0),

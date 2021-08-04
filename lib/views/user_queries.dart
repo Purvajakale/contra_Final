@@ -14,7 +14,7 @@ class _UserQueryState extends State<UserQuery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         title: Center(child: Text('UserQueries')),
         actions: [
           RaisedButton(
@@ -27,7 +27,7 @@ class _UserQueryState extends State<UserQuery> {
                 )),
           )
         ],
-        backgroundColor: Color(0xff7c83fd),
+        backgroundColor: Color(0xffF5637F),
       ),
       body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance.collection('query').snapshots(),
@@ -43,7 +43,7 @@ class _UserQueryState extends State<UserQuery> {
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Card(
-                            color: Colors.indigoAccent[100],
+                            color: Color(0xffF5637F),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25.0),
                             ),
@@ -84,6 +84,7 @@ class _UserQueryState extends State<UserQuery> {
                                 ),
                                 Text(
                                   '${snapshot.data.docs[index]['desc']}',
+                                  textAlign: TextAlign.justify,
                                   style: TextStyle(
                                       fontSize: 20, color: Colors.white),
                                 )

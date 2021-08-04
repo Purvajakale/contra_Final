@@ -68,7 +68,7 @@ class _AppState extends State<App> {
                             child: Card(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25)),
-                              shadowColor: Color(0xffF38BA0),
+                              shadowColor: Color(0xffF5637F),
                               elevation: 5,
                               child: ExpansionTile(
                                 key: keyTile,
