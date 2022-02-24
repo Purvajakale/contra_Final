@@ -76,9 +76,9 @@ class OnBoardPageState extends State<OnBoardPage> with TickerProviderStateMixin 
 //      indicatorType: IndicatorType.CIRCLE,
       slides: [
         IntroScreen(
-          title: 'Search Pills',
+          title: 'Welcome',
           imageAsset: 'assets/images/onboard3.png',
-          description: 'Know more about options for different contraceptive pills',
+          description: 'Know more about diabetes and heart diseases symptoms',
           headerBgColor: Colors.white,
         ),
         IntroScreen(

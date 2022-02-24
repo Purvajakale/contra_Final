@@ -19,7 +19,7 @@ class _Faq1UpdateState extends State<Faq1Update> {
           Container(
             child: Padding(
               padding: EdgeInsets.fromLTRB(30, 10, 20, 5),
-              child: Text("Daily use Contraceptive Pills",
+              child: Text("Daibetes",
                 style: GoogleFonts.alikeAngular(
                   // fontStyle: FontStyle.italic,
                     fontSize: 16,
@@ -77,13 +77,6 @@ class _faqs1State extends State<faqs1> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
-                  onPressed: () => updateData(doc),
-                  child: Text('Update ', style: TextStyle(color: Colors.white)),
-                  color: Color(0xffF5637F),
-                ),
                 SizedBox(width: 8),
                 Container(
                     child: IconButton(

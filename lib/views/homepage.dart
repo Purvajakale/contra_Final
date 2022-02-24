@@ -275,7 +275,7 @@ class _  HomePage1State extends State<  HomePage1> {
                       SizedBox(height: 20,)
 
                       // InkWell(
-                      //     child: Image.asset("assets/images/img2.png"),
+                      //     child: Image.asset("assets/images/app_icon.png"),
                       //     onTap: () {
                       //       Navigator.push(
                       //         context,

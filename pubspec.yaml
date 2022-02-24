@@ -43,7 +43,7 @@ dependencies:
   intl: ^0.17.0
 
 flutter_launcher_name:
-  name: "Contracare"
+  name: "Aarog"
 
 dev_dependencies:
   flutter_test:

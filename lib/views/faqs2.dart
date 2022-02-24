@@ -20,7 +20,7 @@ class _FaqPage2State extends State<FaqPage2> {
             child: Padding(
               padding: EdgeInsets.fromLTRB(30, 10, 20, 10),
               child: Text(
-                "Daily use Contraceptive Pills",
+                "Heart Diseases",
                 style: GoogleFonts.alikeAngular(
                   // fontStyle: FontStyle.italic,
                     fontSize: 20,

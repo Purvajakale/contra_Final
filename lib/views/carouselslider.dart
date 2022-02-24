@@ -25,7 +25,7 @@ class RecomendsPlants extends StatelessWidget {
             },
             child: RecomendPlantCard(
               image: "assets/images/med_img.png",
-              title: "Pills Brands",
+              title: "Symptoms",
               press: () {
                 Navigator.push(
                   context,
@@ -120,7 +120,7 @@ class RecomendPlantCard extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(
-        left: 20,top: 20,bottom: 20
+        left: 20,top: 20,bottom: 0
       ),
       width: size.width * 0.35,
       height: size.height * 0.2,

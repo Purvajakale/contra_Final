@@ -30,7 +30,7 @@ class _PillsBrandsState extends State<PillsBrands> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pills Information',),backgroundColor: Color(0xffF5637F),
+        title: const Text("Various symptoms",),backgroundColor: Color(0xffF5637F),
       ),
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.white,

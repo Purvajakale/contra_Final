@@ -27,7 +27,7 @@ class _LoginChoiceState extends State<LoginChoice> {
         minWidth: MediaQuery.of(context).size.width * 0.55,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
-          alertbox();
+          // alertbox();
           dynamic result = await _auth.signInAnonymously();
           Navigator.push(
             context,

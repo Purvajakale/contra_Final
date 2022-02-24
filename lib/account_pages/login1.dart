@@ -3,31 +3,10 @@ import 'package:contra_care/account_pages/resetpass.dart';
 import 'package:contra_care/account_pages/signup1.dart';
 import 'package:contra_care/views/adminpanel.dart';
 import 'package:contra_care/views/home2.dart';
-import 'package:contra_care/views/onboarding%20screen/onboard_main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:contra_care/views/homepage.dart';
-import 'package:contra_care/account_pages/pass_reset.dart';
 import 'package:contra_care/services/animation.dart';
-import 'package:contra_care/account_pages/sign_up.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../account_pages/login.dart';
-import 'package:contra_care/services/anon_auth.dart';
-import 'package:contra_care/features/reminders/screens/home/home.dart';
-
-
-// class Onboarding extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       theme: ThemeData(),
-//       home: HomeController(),
-//     );
-//   }
-// }
 
 
 class Login extends StatefulWidget {
@@ -40,6 +19,7 @@ class _LoginState extends State<Login> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  String admin_email, admin_pass;
   String _name, _email, _password, _role = 'admin';
 
   checkAuth() async {
@@ -57,16 +37,49 @@ class _LoginState extends State<Login> {
 
   }
 
-
  
+
+  // login() async {
+  //   if (_formKey.currentState.validate()) {
+  //     _formKey.currentState.save();
+  //     if (_email == 'contracareofficial@gmail.com') {
+  //       try {
+  //         // UserCredential user = await _auth.signInWithEmailAndPassword(
+  //         //     email: _email, password: _password);
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => AdminPanel()),
+  //         );
+  //       } catch (e) {
+  //         showError(e.message);
+  //         print(e);
+  //       }
+  //     } else
+  //       // if(_role=='admin'&& _email=='contracareofficial@gmail.com'){checkrole();}
+  //
+  //       try {
+  //         UserCredential user = await _auth.signInWithEmailAndPassword(
+  //             email: _email, password: _password);
+  //         Navigator.push(
+  //           context,
+  //           MaterialPageRoute(builder: (context) => HomePage()),
+  //         );
+  //       } catch (e) {
+  //         showError(e.message);
+  //         print(e);
+  //       }
+  //   }alertbox();
+  // }
 
   login() async {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      if (_email == 'contracareofficial@gmail.com') {
+      DocumentSnapshot admindata=await FirebaseFirestore.instance.collection('password').doc('eKurKQJXUaZwlLbkGrg1').get();
+
+      admin_email=admindata['e-mail'];
+      admin_pass=admindata['password'];
+      if (_email == admin_email && _password==admin_pass) {
         try {
-          // UserCredential user = await _auth.signInWithEmailAndPassword(
-          //     email: _email, password: _password);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => AdminPanel()),
@@ -76,7 +89,6 @@ class _LoginState extends State<Login> {
           print(e);
         }
       } else
-        // if(_role=='admin'&& _email=='contracareofficial@gmail.com'){checkrole();}
 
         try {
           UserCredential user = await _auth.signInWithEmailAndPassword(
@@ -89,7 +101,8 @@ class _LoginState extends State<Login> {
           showError(e.message);
           print(e);
         }
-    }alertbox();
+    }
+    // alertbox();
   }
 
   showError(String errormessage) {

@@ -1,17 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:contra_care/views/adminpanel.dart';
 import 'package:contra_care/views/home2.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FormFour extends StatefulWidget {
+class ResetAdminpass extends StatefulWidget {
   @override
-  _FormFourState createState() => _FormFourState();
+  _ResetAdminpassState createState() => _ResetAdminpassState();
 }
 
-class _FormFourState extends State<FormFour> with Validator {
-  final snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
-
+class _ResetAdminpassState extends State<ResetAdminpass> with Validator {
+  final snackBar = SnackBar(content: Text('Password Changed successfully'));
 
   String id;
   final db = FirebaseFirestore.instance;
@@ -44,35 +44,60 @@ class _FormFourState extends State<FormFour> with Validator {
     super.dispose();
   }
 
-  String name, description, email;
+  String password, email;
 
   final Color activeColor = Colors.black;
   final Color inActiveColor = Colors.white;
 
-
-  void createData() async {
+  void updateData() async {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      DocumentReference ref = await db
-          .collection('query')
-          .add({'name': name, 'desc': description, 'email': email});
-      setState(() => id = ref.id);
-      print(ref.id);
+      DocumentReference ref;
+      await db
+          .collection('password')
+          .doc('eKurKQJXUaZwlLbkGrg1')
+          .update({'e-mail': email, 'password': password});
+      // setState(() => id = ref.id);
+      // print(ref.id);
       final snackBar = SnackBar(
-        content: Text('Query submitted'),
+        content: Text('Password updated'),
         action: SnackBarAction(
           label: 'Back to Home Page',
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => HomePage()));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => AdminPanel()));
           },
         ),
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     }
-
-
   }
+
+  // void createData() async {
+  //   if (_formKey.currentState.validate()) {
+  //     _formKey.currentState.save();
+  //    // DocumentReference ref = await db
+  //         .collection('password')
+  //         .doc('eKurKQJXUaZwlLbkGrg1')
+  //         .update({'e-mail':email,'password': password})
+  //         .then((_) => print('Success'));
+  //         .catchError((error) => print('Failed: $error'));
+  //     // .up({'e-mail': email, 'password': password});
+  //     setState(() => id = ref.id);
+  //     print(ref.id);
+  //     final snackBar = SnackBar(
+  //       content: Text('Password updated'),
+  //       action: SnackBarAction(
+  //         label: 'Back to Home Page',
+  //         onPressed: () {
+  //           Navigator.push(
+  //               context, MaterialPageRoute(builder: (context) => AdminPanel()));
+  //         },
+  //       ),
+  //     );
+  //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  //   }
+  // }
 
   Widget _buildName() {
     return Padding(
@@ -81,15 +106,22 @@ class _FormFourState extends State<FormFour> with Validator {
         controller: _nameController,
         validator: usernameValidator,
         keyboardType: TextInputType.text,
+        // decoration: new InputDecoration(
+        //     errorStyle: _errorStyle,
+        //     border: InputBorder.none,
+        //     contentPadding:
+        //     EdgeInsets.symmetric(vertical: minValue, horizontal: minValue),
+        //     labelText: 'Full  Name',
+        //     labelStyle: TextStyle(fontSize: 16.0, color: Colors.grey.shade500)),
         decoration: InputDecoration(
             enabledBorder: const OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xffEB6383), width: 0.7),
+              borderSide:
+              const BorderSide(color: Color(0xffEB6383), width: 0.7),
             ),
             border: const OutlineInputBorder(),
-            hintText: "Full Name",
-            hintStyle: TextStyle(
-                color: Colors.grey[600])),
-        onSaved: (value) => name = value,
+            hintText: "new password",
+            hintStyle: TextStyle(color: Colors.grey[600])),
+        onSaved: (value) => password = value,
       ),
     );
   }
@@ -104,34 +136,14 @@ class _FormFourState extends State<FormFour> with Validator {
           onChanged: (String value) {},
           decoration: InputDecoration(
               enabledBorder: const OutlineInputBorder(
-                borderSide: const BorderSide(color: Color(0xffEB6383), width: 0.7),
+                borderSide:
+                const BorderSide(color: Color(0xffEB6383), width: 0.7),
               ),
               border: const OutlineInputBorder(),
-              hintText: "Email",
-              hintStyle: TextStyle(
-                  color: Colors.grey[600])),
+              hintText: "new email-id",
+              hintStyle: TextStyle(color: Colors.grey[600])),
           onSaved: (value) => email = value,
         ));
-  }
-
-  Widget _buildDescription() {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
-      child: TextFormField(
-        controller: _messageController,
-        keyboardType: TextInputType.text,
-        maxLines: 2,
-        decoration: InputDecoration(
-            enabledBorder: const OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xffEB6383), width: 0.7),
-            ),
-            border: const OutlineInputBorder(),
-            hintText: "Your query/doubts",
-            hintStyle: TextStyle(
-                color: Colors.grey[600])),
-        onSaved: (value) => description = value,
-      ),
-    );
   }
 
   Widget _buildSubmitBtn() {
@@ -144,7 +156,7 @@ class _FormFourState extends State<FormFour> with Validator {
         LinearGradient(colors: [Color(0xfffbccd5), Color(0xffF5637F)]),
       ),
       child: RaisedButton(
-        onPressed: createData,
+        onPressed: updateData,
         padding: EdgeInsets.symmetric(vertical: minValue * 2.4),
         elevation: 0.0,
         color: Colors.transparent,
@@ -163,22 +175,25 @@ class _FormFourState extends State<FormFour> with Validator {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-                child:  Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(
-                      height: minValue * 12,
+                      height: minValue * 18,
                     ),
                     Text(
-                      "Ask Us",
+                      "Update Password",
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 48.0,
+                          fontSize: 35.0,
                           color: Colors.blueGrey),
                     ),
                     SizedBox(
-                      width: 110.0,
+                      height: 8,
+                    ),
+                    SizedBox(
+                      width: 160.0,
                       child: Container(
                         height: 4,
                         color: Color(0xffFF9BA6),
@@ -186,18 +201,10 @@ class _FormFourState extends State<FormFour> with Validator {
                       ),
                     ),
                     SizedBox(
-                      height: minValue * 1,
-                    ),
-                    Text(
-                      "Feel free to ask us. We will get back\n to you as soon as we can.",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
-                          color: Colors.grey),
-                      textAlign: TextAlign.center,
+                      height: 20,
                     ),
                     SizedBox(
-                      height: minValue * 5,
+                      height: minValue * 1,
                     ),
                     Form(
                         key: _formKey,
@@ -208,8 +215,7 @@ class _FormFourState extends State<FormFour> with Validator {
                             color: Colors.white,
                             boxShadow: [
                               BoxShadow(
-                                color:
-                                Color.fromRGBO(196, 135, 198, .3),
+                                color: Color.fromRGBO(196, 135, 198, .3),
                                 blurRadius: 20,
                                 offset: Offset(0, 10),
                               )
@@ -226,29 +232,27 @@ class _FormFourState extends State<FormFour> with Validator {
                                     border: Border(
                                         bottom: BorderSide(
                                             color: Colors.grey[200]))),
-                                child: _buildName(),
+                                // height: 150,
+                                // decoration: BoxDecoration(
+                                //     color: Colors.grey[100], borderRadius: BorderRadius.circular(25)),
+                                child: _buildEmail(),
                               ),
                               SizedBox(
                                 height: minValue * 2,
                               ),
-
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                             color: Colors.grey[200]))),
-                                child: _buildEmail(),
+                                // height: 150,
+                                // decoration: BoxDecoration(
+                                //     color: Colors.grey[100], borderRadius: BorderRadius.circular(25)),
+                                child: _buildName(),
                               ),
                               SizedBox(
                                 height: minValue * 2,
-                              ), Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    border: Border(
-                                        bottom: BorderSide(
-                                            color: Colors.grey[200]))),
-                                child: _buildDescription(),
                               ),
                             ],
                           ),
@@ -263,7 +267,6 @@ class _FormFourState extends State<FormFour> with Validator {
                   ],
                 ),
               ),
-
             ],
           ),
         ),
@@ -294,14 +297,15 @@ class Validator {
       return 'Name must be 4';
     }
   }
-
-  String mobileValidator(String value) {
-    String patttern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
-    RegExp regExp = new RegExp(patttern);
-    if (value.length == 0) {
-      return 'Please enter mobile number';
-    } else if (!regExp.hasMatch(value)) {
-      return 'Please enter valid mobile number';
-    }
-  }
 }
+
+// class MyComponentsLoader extends StatelessWidget {
+//   final Color color;
+//
+//   MyComponentsLoader({this.color});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return CircularProgressIndicator();
+//   }
+// }

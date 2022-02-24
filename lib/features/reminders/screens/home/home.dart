@@ -144,17 +144,7 @@ class _HomeState extends State<Home> {
                           image: AssetImage('assets/images/calen.jpg'),
                           fit: BoxFit.cover,
                         )),
-                        // child: WavyAnimatedTextKit(
-                        //   textStyle: TextStyle(
-                        //       fontSize: 30.0,
-                        //       fontWeight: FontWeight.bold,
-                        //       color: Color(0xff7c83fd)),
-                        //   text: [
-                        //     "Add pills here..."
-                        //   ],
-                        //   isRepeatingAnimation: true,
-                        //   speed: Duration(milliseconds: 150),
-                        // ),
+
                       )
                     : MedicinesList(
                         dailyPills, setData, flutterLocalNotificationsPlugin)

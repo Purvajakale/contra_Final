@@ -8,9 +8,9 @@ class FormFields extends StatelessWidget {
   final int howManyWeeks;
   // final String selectWeight;
   final Function onPopUpMenuChanged, onSliderChanged;
-  final TextEditingController nameController;
+  // final TextEditingController nameController;
   final TextEditingController amountController;
-  FormFields(this.howManyWeeks,this.onPopUpMenuChanged,this.onSliderChanged,this.nameController,this.amountController);
+  FormFields(this.howManyWeeks,this.onPopUpMenuChanged,this.onSliderChanged,this.amountController);
 
   @override
   Widget build(BuildContext context) {
@@ -20,28 +20,28 @@ class FormFields extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: constrains.maxHeight * 0.22,
-            child: TextField(
-              textInputAction: TextInputAction.next,
-              controller: nameController,
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.0),
-              decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(
-                      horizontal: 15.0, vertical: 20.0),
-                  labelText: "Pills Name",
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                      borderSide:
-                      BorderSide(width: 0.5, color: Colors.grey))),
-              onSubmitted: (val)=>focus.nextFocus(),
-            ),
-          ),
+          // Container(
+          //   height: constrains.maxHeight * 0.22,
+          //   child: TextField(
+          //     textInputAction: TextInputAction.next,
+          //     controller: nameController,
+          //     style: TextStyle(
+          //         color: Colors.black,
+          //         fontWeight: FontWeight.w400,
+          //         fontSize: 16.0),
+          //     decoration: InputDecoration(
+          //         contentPadding: EdgeInsets.symmetric(
+          //             horizontal: 15.0, vertical: 20.0),
+          //         labelText: "Pills Name",
+          //         border: OutlineInputBorder(
+          //             borderRadius: BorderRadius.circular(10.0),
+          //             borderSide:
+          //             BorderSide(width: 0.5, color: Colors.grey))),
+          //     onSubmitted: (val)=>focus.nextFocus(),
+          //   ),
+          // ),
           SizedBox(
-              height: constrains.maxHeight * 0.07,
+              height: constrains.maxHeight * 0.05,
           ),
           Row(
             children: [
@@ -68,13 +68,13 @@ class FormFields extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: 10,
-              ),
+              // SizedBox(
+              //   width: 10,
+              // ),
               Flexible(
                 flex: 1,
                 child: Container(
-                  height: constrains.maxHeight * 0.22,
+                  height: constrains.maxHeight * 0.30,
                   // child: DropdownButtonFormField(
                   //   onTap: ()=>focus.unfocus(),
                   //   decoration: InputDecoration(
@@ -102,27 +102,27 @@ class FormFields extends StatelessWidget {
             height: constrains.maxHeight * 0.1,
           ),
           Container(
-            height: constrains.maxHeight * 0.1,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 12.0),
-              child: FittedBox(
-                child: Text(
-                  "How long?",
-                  style: TextStyle(
-                      color: Color(0xffF5637F),
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.w600),
-                ),
+            height: constrains.maxHeight * 0.150,
+            child: FittedBox(
+              child: Text(
+                "How long?",
+                style: TextStyle(
+                    color: Color(0xffF5637F),
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w600),
               ),
             ),
           ),
           Container(
-            height: constrains.maxHeight * 0.18,
+            height: constrains.maxHeight * 0.16,
             child: UserSlider(this.onSliderChanged,this.howManyWeeks)
           ),
           Align(
             alignment: Alignment.bottomRight,
-            child: FittedBox(child: Text('$howManyWeeks days')),
+            child: Padding(
+              padding: const EdgeInsets.only(right: 18.0),
+              child: FittedBox(child: Text('$howManyWeeks days')),
+            ),
           )
         ],
       ),

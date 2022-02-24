@@ -19,7 +19,9 @@ class _PillsState extends State<Pills> {
             child: Padding(
               padding: EdgeInsets.fromLTRB(30, 10, 20, 5),
               child: Text(
-                "Commonly available Brands of Emergency contraceptive pills in India \n\n E-Pill",
+                "Diabetes is a chronic disease that occurs either when the pancreas does "
+                    "not produce enough insulin or when the body cannot effectively use the insulin it produces."
+                    " Insulin is a hormone that regulates blood sugar. \n\n Diabetes symptoms",
                 style: GoogleFonts.alikeAngular(
                     // fontStyle: FontStyle.italic,
                     fontSize: 16,

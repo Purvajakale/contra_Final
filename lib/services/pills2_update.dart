@@ -18,7 +18,7 @@ class Pills2UpdateState extends State<Pills2Update> {
           Container(
             child: Padding(
               padding: EdgeInsets.fromLTRB(30, 10, 20, 5),
-              child: Text("E-Pill",
+              child: Text("Heart diseases",
                 style: GoogleFonts.alikeAngular(
                   // fontStyle: FontStyle.italic,
                     fontSize: 16,
@@ -76,13 +76,6 @@ class _pills2State extends State<pills2> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0)),
-                  onPressed: () => updateData(doc),
-                  child: Text('Update ', style: TextStyle(color: Colors.white)),
-                  color: Color(0xffF5637F),
-                ),
                 SizedBox(width: 8),
                 Container(
                     child: IconButton(

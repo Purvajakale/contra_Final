@@ -16,11 +16,11 @@ class MedicineTypeCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
             color: pillType.isChoose ? Color(0xffF5637F) :Colors.white,
             ),
-            width: 100,
+            width: 80,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: 5.0,),
+                SizedBox(height: 2.0,),
                 Container(width:50,height: 50.0,child: pillType.image),
                 SizedBox(height: 7.0,),
                 Container(child: Text(pillType.name,style: TextStyle(
@@ -31,7 +31,7 @@ class MedicineTypeCard extends StatelessWidget {
 
           ),
         ),
-        SizedBox(width: 15.0,)
+        SizedBox(width: 12.0,)
       ],
     );
   }

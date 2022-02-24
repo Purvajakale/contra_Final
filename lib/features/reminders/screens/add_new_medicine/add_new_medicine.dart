@@ -31,18 +31,18 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
 
   //list of medicines forms objects
   final List<MedicineType> medicineTypes = [
-    MedicineType("E-Pill", Image.asset("assets/images/pills.png"), false),
-    MedicineType("I-Pill", Image.asset("assets/images/capsule.png"), false),
+    MedicineType("Pill", Image.asset("assets/images/pills.png"), false),
+    MedicineType("Capsule", Image.asset("assets/images/capsule.png"), false),
     // MedicineType("Cream", Image.asset("assets/images/cream.png"), false),
-    // MedicineType("Drops", Image.asset("assets/images/drops.png"), false),
-    // MedicineType("Syringe", Image.asset("assets/images/syringe.png"), false),
+    MedicineType("Syrup", Image.asset("assets/images/syrup.png"), false),
+    MedicineType("Syringe", Image.asset("assets/images/syringe.png"), false),
   ];
 
   //-------------Pill object------------------
   int howManyWeeks = 1;
   String selectWeight;
   DateTime setDate = DateTime.now();
-  final TextEditingController nameController = TextEditingController();
+  // final TextEditingController nameController = TextEditingController();
   final TextEditingController amountController = TextEditingController();
 
   //==========================================
@@ -90,15 +90,12 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: deviceHeight * 0.01,
-              ),
               Container(
-                padding: EdgeInsets.only(left: 15.0),
+                padding: EdgeInsets.only(left: deviceHeight*0.09),
                 height: deviceHeight * 0.05,
                 child: FittedBox(
                     child: Text(
-                  "Add Pills",
+                  "Add Reminder",
                   style: Theme.of(context)
                       .textTheme
                       .headline3
@@ -106,18 +103,40 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                 )),
               ),
               SizedBox(
-                height: deviceHeight * 0.03,
+                height: deviceHeight * 0.025,
+              ),
+              Divider(
+                color: Color(0xffF5637F),
+                endIndent: deviceHeight * 0.045,
+                indent: deviceHeight * 0.045,
+                thickness: 2,
+              ),
+              SizedBox(
+                height: deviceHeight * 0.025,
               ),
               Container(
-                height: deviceHeight * 0.37,
+                height: deviceHeight * 0.035,
                 child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: FittedBox(
+                    child: Text(
+                      "Enter number of pills",
+                      style: TextStyle(
+                          color: Color(0xffF5637F),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                height: deviceHeight * 0.23,
+                child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 17.0),
                     child: FormFields(
                         howManyWeeks,
-                        // selectWeight,
                         popUpMenuItemChanged,
                         sliderChanged,
-                        nameController,
                         amountController)),
               ),
               Container(
@@ -128,7 +147,7 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
                     child: Text(
                       "Medicine Name",
                       style: TextStyle(
-                          color: Colors.grey[800],
+                          color: Color(0xffF5637F),
                           fontSize: 18.0,
                           fontWeight: FontWeight.w600),
                     ),
@@ -138,19 +157,44 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
               SizedBox(
                 height: deviceHeight * 0.02,
               ),
-              Container(
-                height: 100,
-                child: ListView(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    ...medicineTypes.map(
-                        (type) => MedicineTypeCard(type, medicineTypeClick))
-                  ],
-                ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: deviceHeight * 0.00034,
+                  ),
+                  Container(
+                    height: 100,
+                    child: ListView(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        ...medicineTypes.map(
+                            (type) => MedicineTypeCard(type, medicineTypeClick))
+                      ],
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: deviceHeight * 0.03,
+              ),
+              Container(
+                height: deviceHeight * 0.035,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: FittedBox(
+                    child: Text(
+                      "Select Time and Date",
+                      style: TextStyle(
+                          color: Color(0xffF5637F),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: deviceHeight*0.02,
               ),
               Container(
                 width: double.infinity,
@@ -312,7 +356,8 @@ class _AddNewMedicineState extends State<AddNewMedicine> {
           medicineForm: medicineTypes[medicineTypes
                   .indexWhere((element) => element.isChoose == true)]
               .name,
-          name: nameController.text,
+          // name: nameController.text,
+          name: "Take your medicine",
           time: setDate.millisecondsSinceEpoch,
           type: selectWeight,
           notifyId: Random().nextInt(10000000));

@@ -18,9 +18,8 @@ class _Table2State extends State<Table2> {
             child: Padding(
               padding: EdgeInsets.fromLTRB(30, 10, 20, 5),
               child: Text(
-                "Multiple brands of oral contraceptive pill are available in India. Some of the commonly available brands "
-                    "of Ethinyl Estradiol and Levonorgestrel "
-                    "combination and Ethinyl Estradiol and Desogestrel combination are as follows \n\n I-Pill",
+                "Heart disease is synonymous with cardiac disease but not with cardiovascular "
+                    "disease which is any disease of the heart or blood vessels. \n\n Heart Diseases symptoms",
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.alikeAngular(
                   // fontStyle: FontStyle.italic,

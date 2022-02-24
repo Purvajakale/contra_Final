@@ -368,7 +368,7 @@ class _SignUpState extends State<SignUp> {
         print(e);
       }
     }
-    alertbox();
+    // alertbox();
   }
 
   // void createData() async {
